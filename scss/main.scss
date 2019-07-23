@@ -1,0 +1,173 @@
+@import "config";
+@import "mobile";
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: $primary-color;
+  color: #fff;
+  height: 100%;
+  margin: 0;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  line-height: 1.5;
+}
+
+/*------Heading-----*/
+h1,
+h2 {
+  margin: 0;
+  font-weight: 1;
+}
+
+a {
+  color: $second-color;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+header {
+  @include background;
+  position: inherit;
+  padding: 4rem;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  .container-header {
+    flex: 0 0 auto;
+
+    .icons {
+      margin-top: 1rem;
+
+      a {
+        padding: 0.5rem;
+
+        &:hover {
+          color: $third-color;
+          @include easeOut();
+        }
+      }
+    }
+  }
+}
+
+// Work/Projects
+.projects {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  .projects-title {
+    padding: 50px 0;
+    h2 {
+      font-size: 40px;
+      text-align: center;
+    }
+  }
+  .projects-center {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: center;
+    text-align: center;
+    .item {
+      display: flex;
+      flex-direction: column;
+      flex: 0 1 500px;
+      width: 45%;
+      // margin: 1%;
+      margin-left: 5rem;
+      margin-right: 5rem;
+      img {
+        width: 100%;
+        height: 100%;
+
+        &:hover {
+          opacity: 0.5;
+          @include easeOut;
+        }
+      }
+    }
+  }
+}
+// Button Styles
+.btn {
+  display: block;
+  padding: 0.5rem 1rem;
+  border: 0;
+  margin-bottom: 0.3rem;
+  &:hover {
+    background: $second-color;
+    // color: set-text-color($second-color);
+    color: $primary-color;
+  }
+}
+.btn-dark {
+  @extend .btn;
+  background: darken($primary-color, 50);
+  color: #fff;
+}
+
+.btn-light {
+  @extend .btn;
+  background: lighten($primary-color, 50);
+  color: #333;
+}
+
+/* ––– WHATIDO –––*/
+.whatIdo {
+  position: relative;
+  text-align: center;
+  margin-bottom: 5rem;
+  h2 {
+    margin-top: 10%;
+    min-height: 40vh;
+    text-transform: uppercase;
+    font-size: 5rem;
+  }
+  .skills {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    img {
+      flex-basis: 100px;
+      background: whitesmoke;
+      margin: 1%;
+      width: 10%;
+      transition: opacity 2s ease, transform 2s ease;
+    }
+    img:hover {
+      opacity: 1;
+      cursor: pointer;
+      transform: scale(1.3);
+    }
+  }
+}
+
+/* ––– FOOTER –––*/
+.footer {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10rem;
+  padding: 1rem;
+  width: 100%;
+
+  font-size: 1.5rem;
+  text-align: left;
+  .footer-text {
+    font-weight: bold;
+  }
+  .footer-text2 {
+    text-align: right;
+    margin-top: -5%;
+  }
+}
